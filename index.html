@@ -2,7 +2,6 @@
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Web_VR</title>
     <meta name="description" content="">
@@ -11,7 +10,7 @@
   </head>
   <body>
     <div id="unity-container">
-      <div id="unity-canvas-container" style="width: 100%; height: 100%;">
+      <div id="unity-canvas-container">
         <canvas id="unity-canvas" style="width: 100%; height: 100%;"></canvas>
       </div>
       <div id="unity-loading-bar">
@@ -30,11 +29,11 @@
     </div>
     <script>
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/VR.loader.js";
+      var loaderUrl = buildUrl + "/Web_VR.loader.js";
       var config = {
-        dataUrl: buildUrl + "/VR.data.unityweb",
-        frameworkUrl: buildUrl + "/VR.framework.js.unityweb",
-        codeUrl: buildUrl + "/VR.wasm.unityweb",
+        dataUrl: buildUrl + "/Web_VR.data.unityweb",
+        frameworkUrl: buildUrl + "/Web_VR.framework.js.unityweb",
+        codeUrl: buildUrl + "/Web_VR.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Web_VR",
@@ -50,6 +49,8 @@
       var unityInstance = null;
       
 
+      canvasContainer.style.width = "960px";
+      canvasContainer.style.height = "600px";
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
